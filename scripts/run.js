@@ -10,20 +10,14 @@ const main = async () => {
     //calling functions
 
     let waveCount = await waveContract.getTotalWaves();
-    let waveTxn = await waveContract.wave();
+    let waveTxn = await waveContract.wave("Hey from run.js !");
     // console.log(await waveTxn.wait());
     await waveTxn.wait();
 
     waveCount = await waveContract.getTotalWaves();
+    let allWaves = await waveContract.getAllWaves();
+    console.log(allWaves);
 
-    waveTxn = await waveContract.connect(randomPerson).wave();
-    await waveTxn.wait();
-  
-    waveCount = await waveContract.getTotalWaves();
-    waveTxn = await waveContract.connect(r1).wave();
-    await waveTxn.wait();
-  
-    waveCount = await waveContract.getTotalWaves();
 
 };
 

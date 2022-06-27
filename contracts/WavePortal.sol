@@ -26,15 +26,13 @@ contract WavePortal {
 
         console.log("%s has waved w/ message : %s", msg.sender, _message);
 
-        waves.push(
-            Wave{
-                owner: msg.sender,
-                message: _message,
-                timestamp: block.timestamp
-            }
-        );
+        waves.push(Wave(msg.sender, _message, block.timestamp));
 
         emit WaveCreated(msg.sender, block.timestamp, _message);
+    }
+
+    function getAllWaves() public view returns (Wave[] memory) {
+        return waves;
     }
 
     function getTotalWaves() public view returns (uint256) {
