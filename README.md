@@ -14,5 +14,3 @@ node scripts/sample-script.js
 npx hardhat help
 ```
 
-
-contract address =  0xBf2e6b15F6633cf862aA67346824416d29f5D324
